@@ -37,12 +37,13 @@ const destination = () => {
   return (
     <div className="bg-destination-mobile sm:bg-destination-tablet lg:bg-destination-desktop bg-cover bg-center bg-fixed bg-no-repeat w-full min-h-screen font-barlow">
       <Header />
-      <div className="flex px-[165px] py-12 items-center justify-center border-yellow-500 border-2">
-        <div className="flex flex-col border-orange-500 border-2">
-          <div className="flex uppercase text-white text-2xl mb-5">
-            01 Pick your destination
+      <div className="flex px-[165px] py-12 items-center justify-center">
+        <div className="flex flex-col">
+          <div className="flex uppercase text-white text-[28px] tracking-[4px] leading-[1.336] font-barlowCondensed">
+            <span className="text-white/40 font-bold mr-5">01</span> Pick your
+            destination
           </div>
-          <div className="flex text-white w-full items-center border-green-500 border-2 mr-8">
+          <div className="flex text-white w-full items-center mr-8">
             <div className="flex">
               {destination === "moon" && (
                 <Image
@@ -78,8 +79,8 @@ const destination = () => {
               )}
             </div>
 
-            <div className="flex flex-col ml-8 w-1/2 py-[133px] px-12 border-purple-500 border-2">
-              <div className="mb-10 text-xl flex space-x-8">
+            <div className="flex flex-col ml-8 w-1/2 py-[133px] px-12">
+              <div className="mb-10 text-xl flex space-x-8 font-barlowCondensed">
                 {Object.keys(planetsData).map((planetName) => (
                   <button
                     key={planetName}
@@ -96,7 +97,7 @@ const destination = () => {
               </div>
 
               <div>
-                <p className="text-xl">
+                <p className="text-[18px] leading-relaxed tracking-normal text-secondary max-w-md">
                   {planetsData[destination].description}
                 </p>
               </div>
@@ -104,15 +105,19 @@ const destination = () => {
               <hr className="border-[0.5px] border-white/25 flex-grow mt-10" />
 
               <div className="flex mt-10">
-                <div className="flex flex-col uppercase">
-                  <div>Avg. distance</div>
+                <div className="flex flex-col uppercase w-1/2">
+                  <div className="font-barlowCondensed text-sm leading-[1.168] tracking-[2px] text-secondary">
+                    Avg. distance
+                  </div>
                   <div className="font-bellefair text-3xl">
                     {planetsData[destination].avgDistance}
                   </div>
                 </div>
 
-                <div className="flex flex-col uppercase ml-28">
-                  <div>Est. travel time</div>
+                <div className="flex flex-col uppercase ml-28 w-1/2">
+                  <div className="font-barlowCondensed text-sm leading-[1.168] tracking-[2px] text-secondary">
+                    Est. travel time
+                  </div>
                   <div className="font-bellefair text-3xl">
                     {planetsData[destination].estTravelTime}
                   </div>

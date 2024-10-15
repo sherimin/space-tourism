@@ -9,11 +9,12 @@ module.exports = {
     extend: {
       fontFamily: {
         bellefair: ["Bellefair", "serif"],
-        barlow: ["Barlow Condensed", "sans-serif"],
+        barlowCondensed: ["Barlow Condensed", "sans-serif"],
+        barlow: ["Barlow", "sans-serif"],
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#0B0D17",
+        secondary: "#D0D6F9",
       },
       backgroundImage: {
         "home-desktop": "url('/home/background-home-desktop.jpg')",
