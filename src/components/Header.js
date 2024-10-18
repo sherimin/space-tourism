@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import { motion, AnimatePresence } from "framer-motion";
 
 const CustomTab = ({ href, number, label, className }) => {
   const pathname = usePathname();
@@ -47,7 +48,7 @@ const Header = () => {
         </div>
 
         {/* Nav Bar */}
-        <div className="flex bg-gradient-to-r from-primary/10 to to-secondary/10 items-center justify-center md:w-3/4 lg:w-1/2 p-4 h-24 backdrop-blur-md">
+        <div className="flex bg-gradient-to-r from-primary/10 to to-secondary/10 items-center justify-center md:w-3/4 lg:w-1/2 p-4 h-24 backdrop-blur-md backdrop-filter">
           <CustomTab href="/" number="00" label="Home" className="mr-5" />
           <CustomTab
             href="/destination"
@@ -81,14 +82,20 @@ const Header = () => {
               width={24}
               height={21}
               className="hover:cursor-pointer"
-              onClick={() => setIsMenuToggled(!isMenuToggled)}
+              onClick={() => setIsMenuToggled(true)}
             />
           )}
         </div>
       </div>
-
+      <AnimatePresence>
       {!isAboveMediumScreens && isMenuToggled && (
-        <div className="fixed right-0 bottom-0 z-20 h-full w-[260px] bg-primary/80 font-barlowCondensed tracking-wider">
+        <motion.div 
+        className="fixed right-0 bottom-0 z-20 h-full w-[260px] bg-primary bg-opacity-25 font-barlowCondensed tracking-wider backdrop-filter backdrop-blur-md"
+        initial={{ x: '100vw' }}
+        animate={{ x: '0' }}
+        exit={{ x: '100vw' }}
+        transition={{ duration: 0.6, ease: 'easeInOut' }} 
+      >
           {/* Close Icon */}
           <div className="flex justify-end pt-8 pr-6">
             <Image
@@ -97,7 +104,7 @@ const Header = () => {
               width={24}
               height={21}
               className="hover:cursor-pointer"
-              onClick={() => setIsMenuToggled(!isMenuToggled)}
+              onClick={() => setIsMenuToggled(false)}
             />
           </div>
 
@@ -118,8 +125,10 @@ const Header = () => {
               className=""
             />
           </div>
-        </div>
+          
+        </motion.div>
       )}
+      </AnimatePresence>
     </>
   );
 };

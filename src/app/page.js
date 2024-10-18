@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 
 export default function Home() {
+
   return (
     <PageTransition>
       <div className="bg-home-mobile sm:bg-home-tablet xl:bg-home-desktop bg-cover bg-center bg-fixed bg-no-repeat w-full min-h-screen">
@@ -26,10 +27,14 @@ export default function Home() {
 
             <div className="flex justify-center xl:justify-start xl:items-end xl:pl-64 ">
               <div className="relative flex justify-center items-center group">
-                <div className="absolute w-[240px] h-[240px] md:w-[380px] md:h-[380px] xl:w-[450px] xl:h-[450px] rounded-full bg-white opacity-10 scale-0 transition-transform duration-300 ease-in-out group-hover:scale-100 my-36 md:mt-12 xl:mt-0"></div>
-                <button className="w-[144px] h-[144px] md:w-[272px] md:h-[272px] my-36  md:mt-12 xl:my-0 xl:w-[272px] xl:h-[272px] bg-white text-primary rounded-full font-bellefair text-xl lg:text-3xl uppercase relative z-10">
+                <div className="absolute w-[240px] h-[240px] md:w-[380px] md:h-[380px] xl:w-[450px] xl:h-[450px] rounded-full bg-white opacity-10 scale-0 transition-transform duration-300 ease-in-out group-hover:scale-100 my-0 md:-mt-24 xl:mt-0"></div>
+                <a href="/destination">
+                <button 
+                  type="button" 
+                  className="w-[144px] h-[144px] md:w-[272px] md:h-[272px] my-36  md:mt-12 xl:my-0 xl:w-[272px] xl:h-[272px] bg-white text-primary rounded-full font-bellefair text-xl md:text-2xl lg:text-3xl uppercase relative z-10">
                   Explore
                 </button>
+                </a>
               </div>
             </div>
           </div>

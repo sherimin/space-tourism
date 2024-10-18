@@ -98,12 +98,12 @@ const destination = () => {
                   ))}
                 </div>
 
-                <div className="text-6xl md:text-7xl xl:text-8xl font-bellefair uppercase mb-10">
+                <div className="text-5xl md:text-7xl xl:text-8xl font-bellefair uppercase mb-10">
                   {destination}
                 </div>
 
                 <div className="flex justify-center">
-                  <p className="text-[18px] leading-relaxed tracking-normal text-secondary max-w-xl md:max-w-lg xl:max-w-md">
+                  <p className="text-[16px] xl:text-[18px] leading-relaxed tracking-normal text-secondary max-w-xl md:max-w-lg xl:max-w-md">
                     {planetsData[destination].description}
                   </p>
                 </div>
@@ -115,7 +115,7 @@ const destination = () => {
                     <div className="font-barlowCondensed text-sm leading-[1.168] tracking-[2px] text-secondary">
                       Avg. distance
                     </div>
-                    <div className="font-bellefair text-3xl">
+                    <div className="font-bellefair text-xl md:text-2xl xl:text-3xl">
                       {planetsData[destination].avgDistance}
                     </div>
                   </div>
@@ -124,7 +124,7 @@ const destination = () => {
                     <div className="font-barlowCondensed text-sm leading-[1.168] tracking-[2px] text-secondary">
                       Est. travel time
                     </div>
-                    <div className="font-bellefair text-3xl">
+                    <div className="font-bellefair text-xl md:text-2xl  xl:text-3xl">
                       {planetsData[destination].estTravelTime}
                     </div>
                   </div>
