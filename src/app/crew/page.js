@@ -1,6 +1,7 @@
 "use client";
 
 import Header from "@/components/Header";
+import PageTransition from "@/components/PageTransition";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -32,91 +33,99 @@ const crewData = [
 ];
 
 const crew = () => {
-  const [crew, setCrew] = useState(1);
+  const [crew, setCrew] = useState(0);
 
   return (
-    <div className="bg-crew-mobile sm:bg-crew-tablet lg:bg-crew-desktop bg-cover bg-center bg-fixed bg-no-repeat w-full min-h-screen">
-      <Header />
-      <div className="flex px-[165px] py-12 items-center justify-center">
-        <div className="flex flex-col">
-          <div className="flex uppercase text-white text-[28px] tracking-[4px] leading-[1.336] font-barlowCondensed">
-            <span className="text-white/40 font-bold mr-5">02</span>Meet your
-            crew
-          </div>
-
-          <div className="w-[1110px] h-[734px] flex gap-8">
-            <div className="w-1/2 flex flex-col">
-              <div className="flex flex-col justify-center h-[631px]">
-                {/* Crew details */}
-                <div className="text-[32px] leading-[1.1367] font-bellefair tracking-normal text-white/50 uppercase">
-                  {crewData[crew].position}
-                </div>
-
-                <div className="text-white text-[56px] leading-[1.642] tracking-normal font-bellefair uppercase">
-                  {crewData[crew].name}
-                </div>
-
-                <div className=" text-secondary text-[18px] leading-relaxed tracking-normal font-barlow">
-                  {crewData[crew].description}
-                </div>
-              </div>
-
-              <div className="flex mt-10">
-                {/* four dots small pagination */}
-                <div className="flex space-x-8">
-                  {crewData.map((_, index) => (
-                    <span
-                      key={index}
-                      onClick={() => setCrew(index)}
-                      className={`cursor-pointer w-4 h-4 rounded-full ${
-                        crew === index ? "bg-white" : "bg-white/30"
-                      }`}
-                    ></span>
-                  ))}
-                </div>
-              </div>
+    <PageTransition>
+      <div className="bg-crew-mobile sm:bg-crew-tablet xl:bg-crew-desktop bg-cover bg-center bg-fixed bg-no-repeat w-full min-h-screen">
+        <Header />
+        <div className="flex p-6 md:p-10 xl:px-[165px] xl:py-12 items-center justify-center ">
+          <div className="flex flex-col">
+            <div className="flex uppercase text-white text-[28px] tracking-[4px] leading-[1.336] font-barlowCondensed">
+              <span className="text-white/40 font-bold mr-5">02</span>Meet your
+              crew
             </div>
 
-            <div className="relative w-1/2">
-              {crew === 0 && (
-                <Image
-                  src="/crew/image-douglas-hurley.png"
-                  width={539.28}
-                  height={676}
-                  className="max-h-[734px] py-7"
-                />
-              )}
-              {crew === 1 && (
-                <Image
-                  src="/crew/image-mark-shuttleworth.png"
-                  width={539.28}
-                  height={676}
-                  className="max-h-[734px] py-7"
-                />
-              )}
-              {crew === 2 && (
-                <Image
-                  src="/crew/image-victor-glover.png"
-                  width={539.28}
-                  height={676}
-                  className="max-h-[734px] py-7"
-                />
-              )}
-              {crew === 3 && (
-                <Image
-                  src="/crew/image-anousheh-ansari.png"
-                  width={539.28}
-                  height={676}
-                  className="max-h-[734px] py-7"
-                />
-              )}
+            <div className="h-[734px] flex flex-col xl:flex-row gap-8 mt-14 xl:mt-6">
+              <div className="w-full xl:w-1/2 flex flex-col text-center xl:text-start">
+                <div className="flex flex-col justify-center xl:h-[631px]">
+                  {/* Crew details */}
+                  <div className="text-[32px] leading-[1.1367] font-bellefair tracking-normal text-white/50 uppercase">
+                    {crewData[crew].position}
+                  </div>
 
-              <div className="absolute bottom-0 left-0 w-full h-[100px]  bg-gradient-to-t from-primary to-transparent"></div>
+                  <div className="text-white text-[56px] leading-tight tracking-normal font-bellefair uppercase my-3">
+                    {crewData[crew].name}
+                  </div>
+
+                  <div className=" text-secondary text-[18px] leading-relaxed tracking-normal font-barlow">
+                    {crewData[crew].description}
+                  </div>
+                </div>
+
+                <div className="flex xl:mt-10 mt-5 justify-center xl:justify-start">
+                  {/* four dots small pagination */}
+                  <div className="flex space-x-8">
+                    {crewData.map((_, index) => (
+                      <span
+                        key={index}
+                        onClick={() => setCrew(index)}
+                        className={`cursor-pointer w-4 h-4 rounded-full ${
+                          crew === index ? "bg-white" : "bg-white/30"
+                        }`}
+                      ></span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative w-full xl:w-1/2 xl:h-full h-full overflow-hidden">
+                <div className="flex justify-center items-center">
+                  {crew === 0 && (
+                    <Image
+                      src="/crew/image-douglas-hurley.png"
+                      alt="douglas-hurley"
+                      width={539.28}
+                      height={676}
+                      className="max-h-[340px] md:max-h-[560px] xl:max-h-[734px] xl:py-7 object-contain"
+                    />
+                  )}
+                  {crew === 1 && (
+                    <Image
+                      src="/crew/image-mark-shuttleworth.png"
+                      alt="mark-shuttleworth"
+                      width={520}
+                      height={676}
+                      className="max-h-[340px] md:max-h-[560px] xl:max-h-[734px] xl:py-7 object-contain "
+                    />
+                  )}
+                  {crew === 2 && (
+                    <Image
+                      src="/crew/image-victor-glover.png"
+                      alt="victor-glover"
+                      width={539.28}
+                      height={662.12}
+                      className="max-h-[340px] md:max-h-[560px] xl:max-h-[734px] xl:py-7 object-contain "
+                    />
+                  )}
+                  {crew === 3 && (
+                    <Image
+                      src="/crew/image-anousheh-ansari.png"
+                      alt="anousheh-ansari"
+                      width={539.28}
+                      height={676}
+                      className="max-h-[340px] md:max-h-[560px] xl:max-h-[734px] xl:py-7 object-contain "
+                    />
+                  )}
+
+                  <div className="absolute bottom-0 left-0 w-full h-[180px] bg-gradient-to-t from-primary to-transparent"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </PageTransition>
   );
 };
 

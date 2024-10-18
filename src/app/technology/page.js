@@ -1,5 +1,6 @@
 "use client";
 import Header from "@/components/Header";
+import PageTransition from "@/components/PageTransition";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -25,83 +26,90 @@ const technology = () => {
   const [term, setTerm] = useState(0);
 
   return (
-    <div className="bg-technology-mobile sm:bg-technology-tablet lg:bg-technology-desktop bg-cover bg-center bg-fixed bg-no-repeat w-full min-h-screen">
-      <Header />
-      <div className="flex py-12 pl-[165px]">
-        <div className="flex flex-col w-[1275px] h-[792px]">
-          <div className="flex uppercase text-white text-[28px] tracking-[4px] leading-[1.336] font-barlowCondensed">
-            <span className="text-white/40 font-bold mr-5">03</span>Space launch
-            101
-          </div>
-
-          <div className="flex gap-8">
-            <div className="w-[635px] flex justify-center items-center gap-16">
-              {/* Buttons & Info */}
-              <div className="text-white flex flex-col w-[80px] h-[304px] justify-between">
-                <button
-                  className="w-20 h-20 border-white/30 bg-primary border-[1px] rounded-full hover:border-2 hover:border-white"
-                  onClick={() => setTerm(0)}
-                >
-                  1
-                </button>
-                <button
-                  className="w-20 h-20 border-white/30 bg-primary border-[1px] rounded-full hover:border-2 hover:border-white"
-                  onClick={() => setTerm(1)}
-                >
-                  2
-                </button>
-                <button
-                  className="w-20 h-20 border-white/30 bg-primary border-[1px] rounded-full hover:border-2 hover:border-white"
-                  onClick={() => setTerm(2)}
-                >
-                  3
-                </button>
-              </div>
-
-              <div className="flex flex-col text-white w-[491px] h-[303px]">
-                <div className="text-[32px] leading-[1.1367] font-bellefair tracking-normal text-white/50 uppercase">
-                  the terminology...
-                </div>
-                <div className="text-white text-[56px] leading-[1.642] tracking-normal font-bellefair uppercase">
-                  {techData[term].name}
-                </div>
-                <div className=" text-secondary text-[18px] leading-relaxed tracking-normal">
-                  {techData[term].description}
-                </div>
-              </div>
+    <PageTransition>
+      <div className="bg-technology-mobile sm:bg-technology-tablet xl:bg-technology-desktop bg-cover bg-center bg-fixed bg-no-repeat w-full min-h-screen">
+        <Header />
+        <div className="flex xl:py-12 xl:pl-[165px] md:py-10 py-6">
+          <div className="flex flex-col w-full xl:w-[1275px] xlh-[792px]">
+            <div className="flex uppercase text-white text-[28px] tracking-[4px] leading-[1.336] font-barlowCondensed">
+              <span className="text-white/40 font-bold mr-5 ml-6 md:ml-10 xl:ml-0">
+                03
+              </span>
+              Space launch 101
             </div>
 
-            <div className="w-[608px]">
-              {/* Image */}
-              {term === 0 && (
-                <Image
-                  src="/technology/image-launch-vehicle-portrait.jpg"
-                  width={608}
-                  height={600}
-                  className="my-[67px]"
-                />
-              )}
-              {term === 1 && (
-                <Image
-                  src="/technology/image-spaceport-portrait.jpg"
-                  width={608}
-                  height={600}
-                  className="my-[67px]"
-                />
-              )}
-              {term === 2 && (
-                <Image
-                  src="/technology/image-space-capsule-portrait.jpg"
-                  width={608}
-                  height={600}
-                  className="my-[67px]"
-                />
-              )}
+            <div className="flex gap-8 xl:flex-row flex-col-reverse ">
+              <div className="w-full xl:w-[635px] flex justify-center items-center gap-16 xl:flex-row flex-col ">
+                {/* Buttons & Info */}
+                <div className="text-white flex flex-row xl:flex-col xl:w-[80px] xl:h-[304px] xl:justify-between gap-6">
+                  <button
+                    className={`w-16 h-16 md:w-20 md:h-20 text-xl xl:text-[32px] leading-[1.1367] font-bellefair tracking-normal border-white/30 bg-primary border-[1px] rounded-full duration-500 hover:border-white ${term === 0 ? "bg-white text-primary" : ""}`}
+                    onClick={() => setTerm(0)}
+                  >
+                    1
+                  </button>
+                  <button
+                    className={`w-16 h-16 md:w-20 md:h-20 text-xl xl:text-[32px] leading-[1.1367] font-bellefair tracking-normal border-white/30 bg-primary border-[1px] rounded-full duration-500 hover:border-white ${term === 1 ? "bg-white text-primary" : ""}`}
+                    onClick={() => setTerm(1)}
+                  >
+                    2
+                  </button>
+                  <button
+                    className={`w-16 h-16 md:w-20 md:h-20 text-xl xl:text-[32px] leading-[1.1367] font-bellefair tracking-normal border-white/30 bg-primary border-[1px] rounded-full duration-500 hover:border-white ${term === 2 ? "bg-white text-primary" : ""}`}
+                    onClick={() => setTerm(2)}
+                  >
+                    3
+                  </button>
+                </div>
+
+                <div className="flex flex-col text-white xl:w-[491px] xl:h-[303px] justify-center items-center xl:items-start mx-5 md:mx-20 xl:mx-0">
+                  <div className="text-3xl xl:text-[32px] leading-[1.1367] font-bellefair tracking-normal text-white/50 uppercase">
+                    the terminology...
+                  </div>
+                  <div className=" text-white text-5xl xl:text-[56px] leading-[1.642] tracking-normal font-bellefair uppercase text-center xl:text-start">
+                    {techData[term].name}
+                  </div>
+                  <div className=" text-secondary text-[18px] leading-relaxed tracking-normal text-center xl:text-start">
+                    {techData[term].description}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex w-screen xl:w-[608px]justify-center items-center overflow-hidden mt-10 xl:mt-0">
+                {/* Image */}
+                {term === 0 && (
+                  <Image
+                    src="/technology/image-launch-vehicle-portrait.jpg"
+                    alt="launch-vehicle-portrait"
+                    width={608}
+                    height={600}
+                    className="object-cover xl:h-auto h-[45vh] md:h-[65vh] w-full"
+                  />
+                )}
+                {term === 1 && (
+                  <Image
+                    src="/technology/image-spaceport-portrait.jpg"
+                    alt="spaceport-portrait"
+                    width={608}
+                    height={600}
+                    className="object-cover xl:h-auto h-[45vh] md:h-[65vh] w-full"
+                  />
+                )}
+                {term === 2 && (
+                  <Image
+                    src="/technology/image-space-capsule-portrait.jpg"
+                    alt="space-capsule-portrait"
+                    width={608}
+                    height={600}
+                    className="object-cover xl:h-auto h-[45vh] md:h-[65vh] w-full"
+                  />
+                )}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </PageTransition>
   );
 };
 
