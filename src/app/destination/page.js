@@ -32,7 +32,7 @@ const planetsData = {
   },
 };
 
-const destination = () => {
+const Destination = () => {
   const [destination, setDestination] = useState("moon");
 
   return (
@@ -138,4 +138,4 @@ const destination = () => {
   );
 };
 
-export default destination;
+export default Destination;

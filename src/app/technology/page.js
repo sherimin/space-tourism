@@ -22,7 +22,7 @@ const techData = [
   },
 ];
 
-const technology = () => {
+const Technology = () => {
   const [term, setTerm] = useState(0);
 
   return (
@@ -113,4 +113,4 @@ const technology = () => {
   );
 };
 
-export default technology;
+export default Technology;

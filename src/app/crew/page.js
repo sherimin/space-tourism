@@ -32,7 +32,7 @@ const crewData = [
   },
 ];
 
-const crew = () => {
+const Crew = () => {
   const [crew, setCrew] = useState(0);
 
   return (
@@ -129,4 +129,4 @@ const crew = () => {
   );
 };
 
-export default crew;
+export default Crew;
