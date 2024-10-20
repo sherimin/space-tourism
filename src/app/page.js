@@ -9,11 +9,11 @@ export default function Home() {
         <Header />
         <main className="flex flex-col xl:flex-row gap-8 justify-between items-center sm:items-start p-5 text-white font-barlow px-10 xl:px-40 xl:pb-32">
           <div className="flex flex-col xl:flex-row xl:pt-12 w-full">
-            <div className="flex flex-col justify-start items-center xl:items-start xl:justify-end mr-8 w-full xl:w-[600px] pt-28">
-              <p className="text-[28px] tracking-[4px] leading-[1.336] text-center text-secondary uppercase font-barlowCondensed">
+            <div className="flex flex-col justify-start items-center xl:items-start xl:justify-end mr-8 w-full xl:w-[600px] pt-12 md:pt-28">
+              <p className="text-[20px] md:text-[28px] tracking-[4px] leading-[1.336] text-center text-secondary uppercase font-barlowCondensed">
                 So, you want to travel to
               </p>
-              <h1 className="text-[144px] tracking-normal uppercase text-center font-bellefair">
+              <h1 className="text-8xl my-6 md:text-9xl xl:text-[144px] tracking-normal uppercase text-center font-bellefair">
                 Space
               </h1>
 

@@ -30,16 +30,16 @@ const Technology = () => {
       <div className="bg-technology-mobile sm:bg-technology-tablet xl:bg-technology-desktop bg-cover bg-center bg-fixed bg-no-repeat w-full min-h-screen">
         <Header />
         <div className="flex xl:py-12 xl:pl-[165px] md:py-10 py-6">
-          <div className="flex flex-col w-full xl:w-[1275px] xlh-[792px]">
-            <div className="flex uppercase text-white text-[28px] tracking-[4px] leading-[1.336] font-barlowCondensed">
+          <div className="flex flex-col w-full xl:w-[1275px] xl:h-[792px] items-center xl:items-stretch">
+            <div className="flex uppercase text-white text-2xl md:text-[28px] tracking-[4px] leading-[1.336] font-barlowCondensed">
               <span className="text-white/40 font-bold mr-5 ml-6 md:ml-10 xl:ml-0">
                 03
               </span>
               Space launch 101
             </div>
 
-            <div className="flex gap-8 xl:flex-row flex-col-reverse ">
-              <div className="w-full xl:w-[635px] flex justify-center items-center gap-16 xl:flex-row flex-col ">
+            <div className="flex gap-8 xl:flex-row flex-col-reverse">
+              <div className="w-full xl:w-[635px] flex justify-center items-center gap-16 xl:flex-row flex-col">
                 {/* Buttons & Info */}
                 <div className="text-white flex flex-row xl:flex-col xl:w-[80px] xl:h-[304px] xl:justify-between gap-6">
                   <button
@@ -69,7 +69,7 @@ const Technology = () => {
                   <div className=" text-white text-5xl xl:text-[56px] leading-[1.642] tracking-normal font-bellefair uppercase text-center xl:text-start">
                     {techData[term].name}
                   </div>
-                  <div className=" text-secondary text-[18px] leading-relaxed tracking-normal text-center xl:text-start">
+                  <div className=" text-secondary text-[18px] leading-relaxed tracking-normal text-center font-barlow xl:text-start">
                     {techData[term].description}
                   </div>
                 </div>

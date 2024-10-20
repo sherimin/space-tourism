@@ -40,12 +40,12 @@ const Destination = () => {
       <div className="bg-destination-mobile sm:bg-destination-tablet xl:bg-destination-desktop bg-cover bg-center bg-fixed bg-no-repeat w-full min-h-screen font-barlow ">
         <Header />
         <div className="flex p-6 md:p-10 xl:px-[165px] xl:py-12 items-center justify-center">
-          <div className="flex flex-col md:border-white xl:border-blue-500 w-full">
-            <div className="flex uppercase text-white text-[28px] tracking-[4px] leading-[1.336] font-barlowCondensed">
+          <div className="flex flex-col md:border-white xl:border-blue-500 w-full items-center md:items-start">
+            <div className="flex uppercase text-white text-2xl md:text-[28px] tracking-[4px] leading-[1.336] font-barlowCondensed">
               <span className="text-white/40 font-bold mr-5">01</span> Pick your
               destination
             </div>
-            <div className="flex flex-col xl:flex-row text-white w-full items-center mr-8 mt-10 xl:mt-0">
+            <div className="flex flex-col xl:flex-row text-white w-full items-center md:mr-8 mt-10 xl:mt-0">
               <div className="flex">
                 {destination === "moon" && (
                   <Image

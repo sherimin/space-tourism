@@ -40,8 +40,8 @@ const Crew = () => {
       <div className="bg-crew-mobile sm:bg-crew-tablet xl:bg-crew-desktop bg-cover bg-center bg-fixed bg-no-repeat w-full min-h-screen">
         <Header />
         <div className="flex p-6 md:p-10 xl:px-[165px] xl:py-12 items-center justify-center ">
-          <div className="flex flex-col">
-            <div className="flex uppercase text-white text-[28px] tracking-[4px] leading-[1.336] font-barlowCondensed">
+          <div className="flex flex-col items-center md:items-start">
+            <div className="flex uppercase text-white text-2xl md:text-[28px] tracking-[4px] leading-[1.336] font-barlowCondensed">
               <span className="text-white/40 font-bold mr-5">02</span>Meet your
               crew
             </div>
@@ -50,11 +50,11 @@ const Crew = () => {
               <div className="w-full xl:w-1/2 flex flex-col text-center xl:text-start">
                 <div className="flex flex-col justify-center xl:h-[631px]">
                   {/* Crew details */}
-                  <div className="text-[32px] leading-[1.1367] font-bellefair tracking-normal text-white/50 uppercase">
+                  <div className="text-2xl md:text-[32px] leading-[1.1367] font-bellefair tracking-normal text-white/50 uppercase">
                     {crewData[crew].position}
                   </div>
 
-                  <div className="text-white text-[56px] leading-tight tracking-normal font-bellefair uppercase my-3">
+                  <div className="text-white text-3xl md:text-[56px] leading-tight tracking-normal font-bellefair uppercase my-3">
                     {crewData[crew].name}
                   </div>
 
@@ -63,7 +63,7 @@ const Crew = () => {
                   </div>
                 </div>
 
-                <div className="flex xl:mt-10 mt-5 justify-center xl:justify-start">
+                <div className="flex mb-20 md:mb-0 xl:mt-10 mt-5 justify-center xl:justify-start">
                   {/* four dots small pagination */}
                   <div className="flex space-x-8">
                     {crewData.map((_, index) => (
