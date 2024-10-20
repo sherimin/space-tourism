@@ -38,38 +38,38 @@ const Header = () => {
 
   return isAboveMediumScreens ? (
     <>
-      <div className="flex w-full h-36 text-white font-barlowCondensed justify-between items-center">
+      <nav className="flex w-full h-36 text-white font-barlowCondensed justify-between items-center">
         {/* Logo and HR Line */}
-        <div className="flex items-center md:w-1/4 lg:w-1/2">
+        <div className="flex items-center md:w-1/4 lg:w-1/2 mt-5">
           <div className="md:ml-4 lg:ml-16">
             <Image src="/logo.svg" alt="Logo" width={48} height={48} />
           </div>
-          <hr className="border-[0.5px] border-white/25 flex-grow md:ml-4 lg:ml-12 -mr-10 z-10" />
+          <hr className="border-[0.5px] border-white/25 flex-grow md:ml-4 lg:ml-12 mr-10 z-10" />
         </div>
 
         {/* Nav Bar */}
-        <div className="flex bg-gradient-to-r from-primary/10 to to-secondary/10 items-center justify-center md:w-3/4 lg:w-1/2 p-4 h-24 backdrop-blur-md backdrop-filter">
-          <CustomTab href="/" number="00" label="Home" className="mr-5" />
+        <div className="flex bg-gradient-to-r from-primary/10 to to-secondary/10 items-center justify-start md:w-3/4 lg:w-1/2 p-4 h-24 backdrop-blur-md backdrop-filter mt-5">
+          <CustomTab href="/" number="00" label="Home" className="mx-8" />
           <CustomTab
             href="/destination"
             number="01"
             label="Destination"
-            className="mx-5"
+            className="mx-8"
           />
-          <CustomTab href="/crew" number="02" label="Crew" className="mx-5" />
+          <CustomTab href="/crew" number="02" label="Crew" className="mx-8" />
           <CustomTab
             href="/technology"
             number="03"
             label="Technology"
-            className="ml-5"
+            className="ml-8"
           />
         </div>
-      </div>
+      </nav>
     </>
   ) : (
     <>
       {/* Mobile Toggle Menu */}
-      <div className="bg-transparent w-full h-[88px] justify-between items-center flex">
+      <nav className="bg-transparent w-full h-[88px] justify-between items-center flex">
         <div className="ml-6">
           <Image src="/logo.svg" alt="Logo" width={40} height={40} />
         </div>
@@ -86,7 +86,7 @@ const Header = () => {
             />
           )}
         </div>
-      </div>
+      </nav>
       <AnimatePresence>
       {!isAboveMediumScreens && isMenuToggled && (
         <motion.div 
